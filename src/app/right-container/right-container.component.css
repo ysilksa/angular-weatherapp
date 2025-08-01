@@ -1,0 +1,127 @@
+/* Outside container for right container */
+.right-container {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+}
+
+/* Nav bar */
+.right-container-nav-bar {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* Nav bar tabs names */
+.nav-bar-tabs {
+    display: flex; 
+    flex-direction: row;
+    margin-left: 30px; 
+    margin-top: 10px; 
+}
+
+/* today and week tabs */
+.today {
+    margin-right: 10px; 
+    color: #C5C5C5;
+}
+.today:hover {
+    color: #1A1A1A;
+    cursor: pointer;
+}
+.today-active {
+    color: #1A1A1A;
+}
+
+.week {
+    color: #C5C5C5;
+}
+.week:hover {
+    color: #1A1A1A;
+    cursor: pointer
+}
+.week-active {
+    color: #1A1A1A;
+}
+
+/* for click underline */
+.underline {
+    width: 50px; 
+    height: 2px; 
+    background-color: #1A1A1A;
+    margin-top: 1.5rem; 
+}
+.underline-today {
+    transform: translate3d(200%, 0, 0);
+    transition: 100ms;
+}
+.underline-week {
+    transform: translate3d(100%);
+    transition: 100ms;
+}
+
+/* nav bar metrics*/
+.nav-bar-metric {
+    display: flex; 
+    flex-direction: row; 
+    margin-right: 30px; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Temperature tabs for C and F */
+.celsius {
+    border-radius: 500px; 
+    padding: 5px 7px 5px 7px; 
+    color: #1A1A1A;
+    background-color: #FFFFFF;
+    font-size: small; 
+}
+.celsius:hover {
+    color: #FFFFFF;
+    background-color: #1A1A1A;
+    cursor: pointer;
+}
+.celsius-active {
+    color: #FFFFFF;
+    background-color: #1A1A1A;
+}
+
+.fahrenheit {
+    border-radius: 500px; 
+    padding: 5px 7px 5px 7px; 
+    color: #1A1A1A;
+    background-color: #FFFFFF;
+    font-size: small; 
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+.fahrenheit:hover {
+    color: #FFFFFF;
+    background-color: #1A1A1A;
+    cursor: pointer;
+}
+.fahrenheit-active {
+    color: #FFFFFF;
+    background-color: #1A1A1A;
+}
+
+/* Profile image */
+.profile-image img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 5px;
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+
+.right-container-data-box {
+    flex: 12; 
+    display: flex; 
+}

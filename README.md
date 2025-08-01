@@ -1,5 +1,11 @@
 # AngularWeatherapp
 
+Resources from:
+- (Sunny Icon)[https://www.flaticon.com/free-icons/sunny] from Freepick FlatIcon
+- (Drizzling icon)[https://www.flaticon.com/free-icons/drizzle] from Freepik FlatIcon
+- (Rain Icon)[https://www.flaticon.com/free-icons/rain] from IwitoStudio FlatIcon
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
 ## Development server
