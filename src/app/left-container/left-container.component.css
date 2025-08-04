@@ -135,6 +135,7 @@
     width: 350px;
     height: 80px;
     border-radius: 20px;
+    object-fit: cover;
 }
 .left-container-location-name {
     margin-top: -60px;
