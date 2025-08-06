@@ -174,5 +174,177 @@
 
 .right-container-todays-highlight {
     flex: 3; 
+    display: flex; 
+    flex-direction: column;
 }
 
+.right-container-todays-highlight-title {
+    flex: 2;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.right-container-todays-highlight-cards {
+    flex: 8; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px; 
+}
+
+.right-container-todays-highlight-card {
+    display: flex; 
+    flex-direction: column;
+    background-color: #FFFFFC;
+    border-radius: 10px;
+    width: 200px; 
+    height: 160px; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.right-container-todays-highlight-card-title {
+    flex: 1;
+    color: #CFCFCF;
+    font-size: small; 
+    font-weight: bold;
+    margin-top: 20px; 
+}
+
+.gauge {
+    flex: 2;
+    width: 50%; 
+    max-width: 200px;
+    margin-top: -10px;
+    font-size: 32px;
+    color: #1A1A1A;
+    font-weight: 500;
+}
+
+.gauge__body {
+    width: 100%; 
+    height: 0; 
+    padding-bottom: 50%;
+    background: #F3F3F4;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden; 
+    margin-top: 1rem;
+}
+
+.gauge__fill {
+    position: absolute; 
+    top: 100%; 
+    width: inherit;
+    height: 100%; 
+    background: #FFBF5E;
+    transform-origin: center top;
+    transform: rotate(0.25turn);
+    transition: transform 0.2s ease-out;
+}
+
+.gauge__cover {
+    width: 75%; 
+    height: 150%; 
+    background: #FFFFFC;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%; 
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* text */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
+    color: #FFFFFF; 
+}
+
+.right-container-todays-highlight-value {
+    flex: 1;
+    margin-top: -50px; 
+    font-size: x-large; 
+    font-weight: 500; 
+    margin-bottom: 10px;
+    z-index: 1; 
+}
+
+.wind-status-value {
+    flex: 2;
+    font-size: 48px; 
+    font-weight: 500; 
+    text-align: center;
+}
+.wind-status-value span {
+    font-size: 16px;
+}
+
+.wind-status-logo {
+    flex: 1; 
+    /* align-self: self-start;
+    margin-left: 50px; */
+}
+
+.wind-status-logo img {
+    width: 30px; 
+    height: 30px; 
+    margin-bottom: 20px;
+}
+
+/* sunrise and sunset card */
+.sunrise-sunset-value {
+    flex: 3;
+    display: flex; 
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.sunrise {
+    flex: 1;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sunrise-img {
+    flex: 1;
+    margin: auto; 
+    margin-bottom: 10px; 
+    margin-right: 10px; 
+}
+.sunrise-img img {
+    width: 20px; 
+    height: 20px; 
+}
+.sunrise-time {
+    flex: 4; 
+    font-weight: 500;
+}
+
+.sunset {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.sunset-img {
+    flex: 1;
+    margin: auto; 
+    margin-bottom: 30px; 
+    margin-right: 10px; 
+}
+.sunset-time {
+    flex: 4; 
+    font-weight: 500;
+}
+.sunset-img img {
+    width: 20px; 
+    height: 20px; 
+}
