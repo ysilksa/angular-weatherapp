@@ -4,7 +4,6 @@ import { LeftContainerComponent } from './left-container/left-container.componen
 import { RightContainerComponent } from './right-container/right-container.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, LeftContainerComponent, RightContainerComponent, FontAwesomeModule],

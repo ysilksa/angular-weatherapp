@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass, faLocation, faCloud, faCloudRain } from '@fortawesome/free-solid-svg-icons';
+import { WeatherService } from '../Services/weather.service';
 
 @Component({
   selector: 'app-left-container',
@@ -18,4 +19,7 @@ export class LeftContainerComponent {
   faCloud:any = faCloud; 
   faCloudRain:any = faCloudRain;
 
+  constructor(weatherService:WeatherService) {
+    
+  }
 }

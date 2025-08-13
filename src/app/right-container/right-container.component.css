@@ -214,6 +214,8 @@
     font-size: small; 
     font-weight: bold;
     margin-top: 20px; 
+    margin-left: 20px; 
+    align-self: self-start;
 }
 
 .gauge {
@@ -347,4 +349,10 @@
 .sunset-img img {
     width: 20px; 
     height: 20px; 
+}
+
+.humidity-summary {
+    font-size: medium;
+    font-weight: 500; 
+    margin-bottom: 20px;  
 }
