@@ -5,6 +5,8 @@ Resources from:
 - (Drizzling icon)[https://www.flaticon.com/free-icons/drizzle] from Freepik FlatIcon
 - (Rain Icon)[https://www.flaticon.com/free-icons/rain] from IwitoStudio FlatIcon
 - {Windy Icon}[https://www.flaticon.com/free-icons/windy] from Mayor Icons - Flaticon
+- (Cloudy sunny icon)[https://www.flaticon.com/free-icons/sunny] created by fjstudio - Flaticon
+- (Rainy sunny icon)[https://www.flaticon.com/free-icons/weather] created by Freepik - Flaticon
 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.

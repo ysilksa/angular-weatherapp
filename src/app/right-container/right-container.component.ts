@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faThumbsUp, faThumbsDown, faFaceSmile, faFaceFrown } from '@fortawesome/free-solid-svg-icons';
+import { WeatherService } from '../Services/weather.service';
 
 @Component({
   selector: 'app-right-container',
@@ -10,40 +11,44 @@ import { faThumbsUp, faThumbsDown, faFaceSmile, faFaceFrown } from '@fortawesome
   styleUrl: './right-container.component.css'
 })
 export class RightContainerComponent {
+
+  constructor(public weatherService: WeatherService){
+
+  };
   // faIcons for humidity 
   faThumbsUp:any = faThumbsUp; 
   faThumbsDown:any = faThumbsDown; 
   faFaceSmile:any = faFaceSmile;
   faFaceFrown:any = faFaceFrown;
 
-  // controls the tabs 
-  today:boolean = false; 
-  week:boolean = true; 
+  // // controls the tabs 
+  // today:boolean = false; 
+  // week:boolean = true; 
 
-  // controls temperature metric value
-  celsius:boolean = true; 
-  fahrenheit:boolean = false; 
+  // // controls temperature metric value
+  // celsius:boolean = true; 
+  // fahrenheit:boolean = false; 
 
   // function that controls tab values/states
   onTodayClick() {
-    this.today = true; 
-    this.week = false; 
+    this.weatherService.today = true; 
+    this.weatherService.week = false; 
   }
 
   onWeekClick() {
-    this.today = false;
-    this.week = true; 
+    this.weatherService.today = false;
+    this.weatherService.week = true; 
   }
 
   // function that controls temperature metric values
   onCelsiusClick() {
-    this.celsius = true;
-    this.fahrenheit = false;
+    this.weatherService.celsius = true;
+    this.weatherService.fahrenheit = false;
   }
 
   onFahrenheitClick() {
-    this.celsius = false; 
-    this.fahrenheit = true; 
+    this.weatherService.celsius = false; 
+    this.weatherService.fahrenheit = true; 
   }
 
   

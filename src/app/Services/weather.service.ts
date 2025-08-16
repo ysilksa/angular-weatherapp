@@ -23,7 +23,7 @@ export class WeatherService {
   temperatureData: TemperatureData = new TemperatureData(); // left container data
   todayData?: TodayData[] = []; // right container data
   weekData?: WeekData[] = [];
-  todaysHighlight?: TodaysHighlight; // right container data
+  todaysHighlight?: TodaysHighlight = new TodaysHighlight(); // right container data
 
   // variables for APi calls
   cityName:string = 'New York';
@@ -32,19 +32,26 @@ export class WeatherService {
   units:string = 'm';
   currentTime:Date = new Date(); 
 
+  // controls the tabs 
+  today:boolean = false; 
+  week:boolean = true; 
+
+  // controls temperature metric value
+  celsius:boolean = true; 
+  fahrenheit:boolean = false; 
 
   constructor(private httpClient: HttpClient) { 
     this.getData();
   }
 
   getSummaryImage(summary:string):string {
-    var baseAddress = "";
+    var baseAddress = "/assets/weather/";
     
     // image names
     var cloudySunny = 'cloudySunny.png';
     var rainSunny = 'rainSunny.png';
-    var windy = 'windy.png';
-    var sunny = 'sun.png';
+    var windy = 'wind.png';
+    var sunny = 'sunny.png';
     var rainy = 'rainy.png';
 
     if (String(summary).includes("Partly Cloudly") || String(summary).includes("P Cloudy")) return baseAddress + cloudySunny;
@@ -95,6 +102,28 @@ export class WeatherService {
     }
   }
 
+  getTimeFromString(localTime:string):string {
+    return localTime.slice(11, 16);
+  }
+
+  // method to get today's highlight data from the base variable
+  fillTodaysHighlight() {
+    this.todaysHighlight.airQuality = this.weatherDetails['v3-wx-globalAirQuality'].globalairquality.airQualityIndex;
+    this.todaysHighlight.humidity = this.weatherDetails['v3-wx-observations-current'].precip24Hour;
+    this.todaysHighlight.sunrise = this.getTimeFromString(this.weatherDetails['v3-wx-observations-current'].sunriseTimeLocal);
+    this.todaysHighlight.sunset = this.getTimeFromString(this.weatherDetails['v3-wx-observations-current'].sunsetTimeLocal);
+    this.todaysHighlight.uvIndex = this.weatherDetails['v3-wx-observations-current'].uvIndex;
+    this.todaysHighlight.visibility = this.weatherDetails['v3-wx-observations-current'].visibility;
+    this.todaysHighlight.windStatus = this.weatherDetails['v3-wx-observations-current'].windSpeed;
+  }
+
+  celsiusToFaren(degrees:number):number {
+    return (degrees * 1.8) + 32;
+  }
+
+  farenToCelsius(degrees:number):number {
+    return (degrees - 32) * 0.555;
+  }
 
   // prepare data to be used in the UI
   prepareData():void {
@@ -103,12 +132,13 @@ export class WeatherService {
 
     // set right container model properties
     this.fillWeekData();
-
     this.fillTodayData();
+    this.fillTodaysHighlight();
 
     console.log(this.temperatureData);
     console.log(this.weekData);
     console.log(this.todayData);
+    console.log(this.todaysHighlight);
   }
 
   // grab weather details from API
