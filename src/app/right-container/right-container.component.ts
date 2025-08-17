@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faThumbsUp, faThumbsDown, faFaceSmile, faFaceFrown } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +6,8 @@ import { WeatherService } from '../Services/weather.service';
 
 @Component({
   selector: 'app-right-container',
-  imports: [NgIf, FontAwesomeModule],
+  standalone: true,
+  imports: [NgIf, NgFor, CommonModule, FontAwesomeModule],
   templateUrl: './right-container.component.html',
   styleUrl: './right-container.component.css'
 })

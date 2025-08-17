@@ -22,4 +22,9 @@ export class LeftContainerComponent {
   constructor(public weatherService:WeatherService) {
     
   }
+
+  onSearch(location:string) {
+    this.weatherService.cityName = location; 
+    this.weatherService.getData();
+  }
 }
